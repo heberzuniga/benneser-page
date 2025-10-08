@@ -1,0 +1,231 @@
+/* ===========================
+   BENESSERE - Wellness Landing Page
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9f5f2;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ===== Preloader ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #6a1b9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.preloader-text {
+  color: white;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  opacity: 0;
+  animation: fadeInSpread 2s ease-in-out forwards;
+}
+
+@keyframes fadeInSpread {
+  0% {opacity: 0; letter-spacing: 0;}
+  50% {opacity: 1; letter-spacing: 6px;}
+  100% {opacity: 1; letter-spacing: 4px;}
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  color: #6a1b9a;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #6a1b9a;
+}
+
+.lang-selector {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.lang:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Hero Section ===== */
+#hero {
+  background: url('../images/bg-diagonal.jpg') center/cover fixed;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: fadeUp 1.5s ease;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 2s ease;
+}
+
+.btn {
+  background: #8bc34a;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #6a1b9a;
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section.light {
+  background: #fff;
+}
+
+.section h2 {
+  color: #6a1b9a;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Team ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.team-grid img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.team-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #6a1b9a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  nav ul { flex-direction: column; display: none; }
+  nav.active ul { display: flex; }
+  header { flex-wrap: wrap; }
+  .hero-content h1 { font-size: 1.8rem; }
+}
+.footer-logo {
+  margin-bottom: 10px;
+}
+.footer-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1); /* blanco sobre fondo morado */
+}
+
