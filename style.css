@@ -221,11 +221,4 @@ footer {
   header { flex-wrap: wrap; }
   .hero-content h1 { font-size: 1.8rem; }
 }
-.footer-logo {
-  margin-bottom: 10px;
-}
-.footer-logo img {
-  height: 40px;
-  filter: brightness(0) invert(1); /* blanco sobre fondo morado */
-}
 
